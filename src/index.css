@@ -244,3 +244,12 @@ input:focus {
     width: 80%;
   }
 }
+
+@media (max-width: 362px){
+  .container h1{
+    font-size:25px;
+  }
+  .btn {
+    width: 60px;
+  }
+}

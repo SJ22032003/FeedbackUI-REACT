@@ -8,7 +8,7 @@ import FeedbackForm from "./components/FeedbackForm";
 
 function App() {
     // localStorage.clear();
-  const feedbackData = FeedData;
+//   const feedbackData = FeedData;
 
   const [feedback, setFeedback] = useState(
     JSON.parse(localStorage.getItem("data")) || FeedData
