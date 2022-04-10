@@ -3,9 +3,7 @@ const FeedbackContext = createContext();
 
 export const FeedbackProvider = (props) => {
   const [feedback, setFeedback] = useState([
-    {
-      
-    },
+    
   ]);
 
   const [feedbackEdit , setFeedbackEdit] = useState({
