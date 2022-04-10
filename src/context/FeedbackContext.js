@@ -4,9 +4,7 @@ const FeedbackContext = createContext();
 export const FeedbackProvider = (props) => {
   const [feedback, setFeedback] = useState([
     {
-      id: 1,
-      text: "This item is for context",
-      rating: 10,
+      
     },
   ]);
 
