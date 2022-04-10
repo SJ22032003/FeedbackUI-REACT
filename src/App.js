@@ -1,41 +1,38 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
-import FeedData from "./components/data/FeedbackData.json";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
+import AboutPage from "./pages/AboutPage";
+import AboutIconLink from "./components/AboutIconLink";
+import { FeedbackProvider } from "./context/FeedbackContext";
 
 function App() {
-    // localStorage.clear();
-//   const feedbackData = FeedData;
-
-  const [feedback, setFeedback] = useState(
-    JSON.parse(localStorage.getItem("data")) || FeedData
-  );
-
-  const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this review ?")) {
-      const newData = feedback.filter((item) => item.id !== id);
-      localStorage.setItem("data", JSON.stringify(newData));
-      setFeedback(newData);
-    }
-  };
-  const handleAddFeedback = (newFeedback) => {
-    const newData = [newFeedback, ...feedback];
-    localStorage.setItem("data", JSON.stringify(newData));
-    setFeedback(newData);
-    // console.log(newFeedback);
-  };
   return (
-    <>
-      <Header />
-      <div className={`${feedback.length === 0 ? "noFeedback" : "container"}`}>
-        <FeedbackForm addFeedback={handleAddFeedback} />
-        <FeedbackStats feedbackStats={feedback} />
-        <FeedbackList feedback={feedback} handleDelete={handleDelete} />
-      </div>
-    </>
+    <FeedbackProvider>
+      <Router>
+        <Header />
+
+        <div className="container">
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <FeedbackForm />
+                  <FeedbackStats />
+                  <FeedbackList />
+                </>
+              }
+            />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+          <AboutIconLink />
+        </div>
+      </Router>
+    </FeedbackProvider>
   );
 }
 

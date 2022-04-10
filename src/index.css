@@ -1,5 +1,5 @@
 /* This is global CSS for Index */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #202142;
   color: #fff;
   line-height: 1.6;
@@ -18,7 +18,8 @@ ul {
   list-style: none;
 }
 
-.container , .noFeedback {
+.container,
+.noFeedback {
   max-width: 768px;
   margin: auto;
   padding: 0 20px;
@@ -40,7 +41,7 @@ header {
   padding: 40px 50px;
   margin: 20px 0;
   position: relative;
-  text-align:center;
+  text-align: center;
 }
 
 .card.reverse {
@@ -62,7 +63,8 @@ header {
 }
 
 .rating li,
-.num-display , .badRating {
+.num-display,
+.badRating {
   position: relative;
   background: #f4f4f4;
   width: 50px;
@@ -88,19 +90,19 @@ header {
 }
 
 .rating li:hover,
-.num-display   {
+.num-display {
   background: #ff6a95;
   color: #fff;
 }
 .badRating {
   background-color: #e40a48;
-  color:#fff;
+  color: #fff;
 }
-[type='radio'] {
+[type="radio"] {
   opacity: 0;
 }
 
-[type='radio']:checked ~ label {
+[type="radio"]:checked ~ label {
   background: #ff6a95;
   color: #fff;
 }
@@ -130,7 +132,8 @@ input:focus {
   align-items: center;
 }
 
-.num-display , .badRating {
+.num-display,
+.badRating {
   position: absolute;
   top: -10px;
   left: -10px;
@@ -145,12 +148,15 @@ input:focus {
   background: none;
   border: none;
 }
-.close:active{
+.close:active {
   transform: scaleY(0.8);
 }
 
 .edit {
   right: 40px;
+}
+.edit:active{
+  transform: scaleY(0.8);
 }
 
 .btn {
@@ -202,6 +208,14 @@ input:focus {
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
  * document */
+.about {
+  text-align: left;
+}
+.about-link {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
 .about-link a {
   color: #fff;
   cursor: pointer;
@@ -210,12 +224,16 @@ input:focus {
 .about-link a:hover {
   color: #ff6a95;
 }
+.about-link:active {
+  transform: scaleY(0.9);
+}
 
 .about h1 {
   margin-bottom: 20px;
 }
 
 .about p {
+  text-align: left !important;
   margin: 10px 0;
 }
 
@@ -224,30 +242,36 @@ input:focus {
   min-height: fit-content;
   margin: auto;
   text-align: center;
-  font-size:30px;
+  font-size: 15px;
 }
 
-@media (max-width: 600px) {
-  .rating li {
-    margin: 10px 3px;
+@media (max-width: 830px) {
+  .about-link {
+    position:relative;
+    bottom: 1px;
+    right: 1px;
   }
+  @media (max-width: 600px) {
+    .rating li {
+      margin: 10px 3px;
+    }
 
-  .rating {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 30px 0 40px;
-  }
+    .rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px 0 40px;
+    }
 
-  .input-group input {
-    width: 80%;
+    .input-group input {
+      width: 80%;
+    }
   }
 }
-
-@media (max-width: 362px){
-  .container h1{
-    font-size:25px;
+@media (max-width: 362px) {
+  .container h1 {
+    font-size: 25px;
   }
   .btn {
     width: 60px;
