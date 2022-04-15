@@ -17,7 +17,7 @@ export const FeedbackProvider = (props) => {
   async function fetchFeedback() {
     try {
       const response = await fetch(
-        `http://localhost:5000/feedback?_sort=id&_order=desc`
+        `https://feedback-ui-backend.herokuapp.com/feedback?_sort=id&_order=desc`
       );
       const data = await response.json();
       setFeedback(data);
@@ -29,7 +29,7 @@ export const FeedbackProvider = (props) => {
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this review ?")) {
-      await fetch(`http://localhost:5000/feedback/${id}`, {
+      await fetch(`https://feedback-ui-backend.herokuapp.com/feedback/${id}`, {
         method: "DELETE",
       });
       const newData = feedback.filter((item) => item.id !== id);
@@ -39,7 +39,7 @@ export const FeedbackProvider = (props) => {
 
   async function handleAddFeedback(newFeedback) {
     try {
-      const response = await fetch(`http://localhost:5000/feedback`, {
+      const response = await fetch(`https://feedback-ui-backend.herokuapp.com/feedback`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export const FeedbackProvider = (props) => {
   //update feedback
   async function updateFeedback(id, updItem) {
     try {
-      const response = await fetch(`http://localhost:5000/feedback/${id}`, {
+      const response = await fetch(`https://feedback-ui-backend.herokuapp.com/feedback/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
