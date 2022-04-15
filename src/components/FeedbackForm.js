@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useContext , useEffect } from "react";
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 import Card from "./shared/Card";
 import Button from "./shared/Button";
 import RatingSelect from "./RatingSelect";
@@ -46,7 +46,7 @@ function FeedbackForm(props) {
       if(feedbackEdit.edit === true){
         updateFeedback(feedbackEdit.item.id , newFeedback);
       }else{
-        newFeedback.id = uuid();
+        // newFeedback.id = uuid();
         handleAddFeedback(newFeedback);
       }
       setText("");
